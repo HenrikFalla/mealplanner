@@ -4,11 +4,23 @@ export interface ISignUpUser {
 	password: string;
 	confirmPassword: string;
 }
+export interface IUser {
+	id: string;
+	email: string;
+	image?: string;
+	name?: string;
+	role?: string;
+}
 export interface IUserSession {
 	user: {
 		id: string;
 		email: string;
 		image?: string;
 		name?: string;
+		role?: string;
 	};
+}
+export interface IUnit {
+	id?: number;
+	name: string;
 }

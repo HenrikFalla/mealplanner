@@ -22,11 +22,12 @@ model Profile {
 }
 
 model Recipe {
-  id          Int          @id @default(autoincrement())
-  title       String       @unique
-  description String?
-  steps       RecipeStep[]
-
+  id             Int              @id @default(autoincrement())
+  title          String           @unique
+  description    String?
+  steps          RecipeStep[]
+  genre          Genres[]
+  slug           String
   IngerdientList IngerdientList[]
 }
 
@@ -35,6 +36,7 @@ model IngerdientList {
   recipe      Recipe       @relation(fields: [recipeId], references: [id])
   recipeId    Int
   name        String
+  amount      Int
   ingredients Ingredient[]
 }
 
@@ -44,6 +46,13 @@ model RecipeStep {
   recipeId    Int
   description String
   stepOrder   Int
+}
+
+model Genres {
+  id       Int     @id @default(autoincrement())
+  name     String  @unique
+  Recipe   Recipe? @relation(fields: [recipeId], references: [id])
+  recipeId Int?
 }
 
 model Ingredient {

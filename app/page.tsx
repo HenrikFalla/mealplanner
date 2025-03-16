@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import { authClient } from './lib/auth-client';
 
 export default function Home() {
