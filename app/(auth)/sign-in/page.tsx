@@ -1,11 +1,5 @@
-import { Card } from '@/app/components/ui/card';
+import SignInForm from '@/app/components/auth/sign-in-form';
 
 export default function SignIn() {
-	return (
-		<div>
-			<Card className='flex flex-col'>
-				<h1>Sign in</h1>
-			</Card>
-		</div>
-	);
+	return <SignInForm />;
 }
