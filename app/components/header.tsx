@@ -17,7 +17,7 @@ export function Header() {
 	console.log('Pending: ', isPending);
 	console.log('Session: ', session);
 	return (
-		<section className='flex flex-row justify-between items-center p-4 fixed top-0 w-screen'>
+		<section className='flex flex-row justify-between items-center p-4 fixed top-0 w-screen px-8'>
 			<div>
 				<Link
 					href='/'
