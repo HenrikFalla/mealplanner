@@ -39,7 +39,10 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<Header />
-					{children}
+					<main className='min-h-screen pt-20'>{children}</main>
+					<footer className='row-start-3 flex gap-[24px] flex-wrap items-center justify-center pb-8'>
+						{`Copyright © ${new Date().getFullYear()} Henrik Falla`}
+					</footer>
 				</ThemeProvider>
 			</body>
 		</html>

@@ -6,6 +6,7 @@ import { LogOutIcon, UserCircle2Icon } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import type { IUser } from '../utils/types';
+import Link from 'next/link';
 
 export default function ProfileMenu({ user }: { user: IUser }) {
 	const [open, setOpen] = useState(false);
@@ -54,6 +55,7 @@ export default function ProfileMenu({ user }: { user: IUser }) {
 					</CardTitle>
 				</CardHeader>
 				<CardContent className='p-0 pt-2 pl-2 w-full justify-start items-start flex flex-col gap-4'>
+					{user.role === 'ADMIN' && <Link href='/admin'>Admin</Link>}
 					<Button
 						onClick={handleSignOut}
 						className='flex flex-row gap-2'
