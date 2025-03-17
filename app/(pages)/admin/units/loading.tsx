@@ -7,7 +7,7 @@ import {
 
 export default function Loading() {
 	return (
-		<main className='flex flex-col gap-8 p-8 pt-0'>
+		<section className='flex flex-col gap-8'>
 			<div className='h-6 w-20 block bg-foreground/25 dark:bg-background/25 rounded-xl animate-pulse'></div>
 			<div className='h-10 w-56 block bg-foreground/25 dark:bg-background/25 rounded-xl animate-pulse'></div>
 			<section className='flex flex-col gap-4'>
@@ -64,6 +64,6 @@ export default function Loading() {
 					</div>
 				</section>
 			</section>
-		</main>
+		</section>
 	);
 }
