@@ -17,7 +17,7 @@ export function Header() {
 	console.log('Pending: ', isPending);
 	console.log('Session: ', session);
 	return (
-		<section className='flex flex-row justify-between items-center p-4 fixed top-0 w-screen px-8'>
+		<section className='flex flex-row justify-between items-center p-4 fixed top-0 w-screen px-8 bg-background/95 dark:bg-foreground/95 border-b border-foreground/25 dark:border-background/25 backdrop-blur-sm supports-[backdrop-filter]:bg-background/35 dark:supports-[backdrop-filter]:bg-foreground/35'>
 			<div>
 				<Link
 					href='/'
