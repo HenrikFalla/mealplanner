@@ -3,7 +3,7 @@ import { auth } from '../../lib/auth';
 import { redirect } from 'next/navigation';
 import { Card, CardHeader, CardTitle } from '../../components/ui/card';
 import Link from 'next/link';
-import { PencilRulerIcon } from 'lucide-react';
+import { CarrotIcon, PencilRulerIcon } from 'lucide-react';
 
 export default async function Admin() {
 	const response = await auth.api.getSession({
@@ -31,6 +31,19 @@ export default async function Admin() {
 							<CardTitle className='flex flex-row items-start gap-4'>
 								<PencilRulerIcon />
 								Manage units
+							</CardTitle>
+						</CardHeader>
+					</Card>
+				</Link>
+				<Link
+					href='/admin/ingredients'
+					className='col-span-2'
+				>
+					<Card>
+						<CardHeader>
+							<CardTitle className='flex flex-row items-start gap-4'>
+								<CarrotIcon />
+								Manage ingredients
 							</CardTitle>
 						</CardHeader>
 					</Card>

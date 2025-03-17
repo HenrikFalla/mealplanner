@@ -26,18 +26,28 @@ model Recipe {
   title          String           @unique
   description    String?
   steps          RecipeStep[]
-  genre          Genres[]
   slug           String
-  IngerdientList IngerdientList[]
+  IngredientList IngredientList[]
+  Genre          Genre?           @relation(fields: [genreId], references: [id])
+  genreId        Int?
 }
 
-model IngerdientList {
-  id          Int          @id @default(autoincrement())
-  recipe      Recipe       @relation(fields: [recipeId], references: [id])
-  recipeId    Int
-  name        String
-  amount      Int
-  ingredients Ingredient[]
+model IngredientList {
+  id               Int                @id @default(autoincrement())
+  recipe           Recipe             @relation(fields: [recipeId], references: [id])
+  recipeId         Int
+  name             String
+  amount           Int
+  IngredientInList IngredientInList[]
+}
+
+model IngredientInList {
+  id               Int             @id @default(autoincrement())
+  name             String
+  amount           Int
+  unit             String
+  IngredientList   IngredientList? @relation(fields: [ingredientListId], references: [id])
+  ingredientListId Int?
 }
 
 model RecipeStep {
@@ -48,27 +58,28 @@ model RecipeStep {
   stepOrder   Int
 }
 
-model Genres {
-  id       Int     @id @default(autoincrement())
-  name     String  @unique
-  Recipe   Recipe? @relation(fields: [recipeId], references: [id])
-  recipeId Int?
+model Genre {
+  id      Int      @id @default(autoincrement())
+  name    String   @unique
+  Recipes Recipe[]
+}
+
+model IngredientGenre {
+  id         Int          @id @default(autoincrement())
+  name       String       @unique
+  Ingredient Ingredient[]
 }
 
 model Ingredient {
-  id   Int     @id @default(autoincrement())
-  name String  @unique
-  unit Units[]
-
-  IngerdientList   IngerdientList? @relation(fields: [ingerdientListId], references: [id])
-  ingerdientListId Int?
+  id                Int              @id @default(autoincrement())
+  name              String           @unique
+  IngredientGenre   IngredientGenre? @relation(fields: [ingredientGenreId], references: [id])
+  ingredientGenreId Int?
 }
 
 model Units {
-  id           Int         @id @default(autoincrement())
-  name         String      @unique
-  Ingredient   Ingredient? @relation(fields: [ingredientId], references: [id])
-  ingredientId Int?
+  id   Int    @id @default(autoincrement())
+  name String @unique
 }
 
 enum Role {

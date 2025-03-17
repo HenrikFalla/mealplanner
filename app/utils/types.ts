@@ -24,3 +24,16 @@ export interface IUnit {
 	id?: number;
 	name: string;
 }
+export interface IIngredient {
+	id?: number;
+	name: string;
+	IngredientGenre?: {
+		id: number;
+		name: string;
+	};
+	ingredientGenreId?: number;
+}
+export interface IIngredientGenre {
+	id: number;
+	name: string;
+}
