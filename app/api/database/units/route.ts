@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export async function GetUnits() {
+export async function getUnits() {
 	const units = await prisma.units.findMany({
 		select: {
 			id: true,
@@ -13,14 +13,14 @@ export async function GetUnits() {
 	});
 	return units;
 }
-export async function CreateUnits(units: Array<IUnit>) {
+export async function createUnits(units: Array<IUnit>) {
 	const data = await prisma.units.createManyAndReturn({
 		data: units,
 		skipDuplicates: true,
 	});
 	return data;
 }
-export async function DeleteUnit(unit: IUnit) {
+export async function deleteUnit(unit: IUnit) {
 	const data = await prisma.units.delete({
 		where: {
 			id: unit.id,

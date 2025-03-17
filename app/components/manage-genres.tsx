@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import type { IGenre } from '../lib/types';
-import { GetGenres } from '../api/database/genres/route';
+import { getGenres } from '../api/database/genres/route';
 import { RefreshCw } from 'lucide-react';
 import {
 	Card,
@@ -21,7 +21,7 @@ export function ManageGenres() {
 	console.log(genres);
 	useEffect(() => {
 		const fetchGenres = async () => {
-			const response = (await GetGenres()) as unknown as Array<IGenre>;
+			const response = (await getGenres()) as unknown as Array<IGenre>;
 			setGenres(response);
 		};
 		fetchGenres();

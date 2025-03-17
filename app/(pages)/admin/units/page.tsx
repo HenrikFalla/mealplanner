@@ -1,4 +1,4 @@
-import { GetUnits } from '@/app/api/database/units/route';
+import { getUnits } from '@/app/api/database/units/route';
 import { ManageUnits } from '@/app/components/manage-units';
 import { auth } from '@/app/lib/auth';
 import type { IUnit } from '@/app/lib/types';
@@ -18,7 +18,7 @@ export default async function AdminUnits() {
 		redirect('/');
 	}
 	// const { user } = response;
-	const units = (await GetUnits()) as Array<IUnit>;
+	const units = (await getUnits()) as Array<IUnit>;
 	console.log(units);
 	return (
 		<section className='flex flex-col gap-8'>

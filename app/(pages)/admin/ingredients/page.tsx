@@ -1,6 +1,6 @@
 import {
-	GetIngredientGenres,
-	GetIngredients,
+	getIngredientGenres,
+	getIngredients,
 } from '@/app/api/database/ingredients/route';
 import { ManageIngredients } from '@/app/components/manage-ingredients';
 import { auth } from '@/app/lib/auth';
@@ -21,9 +21,9 @@ export default async function AdminIngredients() {
 		redirect('/');
 	}
 	// const { user } = response;
-	const ingredients = (await GetIngredients()) as unknown as IIngredient[];
+	const ingredients = (await getIngredients()) as unknown as IIngredient[];
 	const ingredientGenres =
-		(await GetIngredientGenres()) as unknown as IIngredientGenre[];
+		(await getIngredientGenres()) as unknown as IIngredientGenre[];
 	console.log(ingredients);
 	console.log(ingredientGenres);
 	return (
