@@ -5,7 +5,12 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export async function getGenres() {
-	const response = await prisma.genre.findMany();
+	const response = await prisma.genre.findMany({
+		select: {
+			id: true,
+			name: true,
+		},
+	});
 	return response;
 }
 export async function createGenre(data: IGenre) {

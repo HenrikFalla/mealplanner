@@ -1,6 +1,6 @@
-import { createGenre, deleteGenre } from '../api/database/genres/route';
-import { createIngredient } from '../api/database/ingredients/route';
-import { createUnits, deleteUnit } from '../api/database/units/route';
+import { createGenre, deleteGenre } from './database/genres/actions';
+import { createIngredient } from './database/ingredients/actions';
+import { createUnits, deleteUnit } from './database/units/actions';
 import { IGenre, IUnit } from '../lib/types';
 
 export async function ValidateNewUnits(units: Array<IUnit>) {
