@@ -1,13 +1,11 @@
-import { GetUnits } from '@/app/api/database/units/route';
-import { ManageUnits } from '@/app/components/manage-units';
+import { ManageGenres } from '@/app/components/manage-genres';
 import { auth } from '@/app/lib/auth';
-import type { IUnit } from '@/app/lib/types';
 import { ArrowLeft } from 'lucide-react';
 import { headers } from 'next/headers';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
-export default async function AdminUnits() {
+export default async function AdminGenres() {
 	const response = await auth.api.getSession({
 		headers: await headers(),
 	});
@@ -17,9 +15,6 @@ export default async function AdminUnits() {
 	if (response.user.role !== 'ADMIN') {
 		redirect('/');
 	}
-	// const { user } = response;
-	const units = (await GetUnits()) as Array<IUnit>;
-	console.log(units);
 	return (
 		<section className='flex flex-col gap-8'>
 			<Link
@@ -29,8 +24,8 @@ export default async function AdminUnits() {
 				<ArrowLeft />
 				Admin
 			</Link>
-			<h1 className='text-4xl font-bold'>Manage Units</h1>
-			<ManageUnits data={units} />
+			<h1>Manage Genres</h1>
+			<ManageGenres />
 		</section>
 	);
 }

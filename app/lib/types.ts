@@ -37,3 +37,8 @@ export interface IIngredientGenre {
 	id: number;
 	name: string;
 }
+export interface IGenre {
+	// add array of recipes as optional once the type for recipes is created
+	id?: number;
+	name: string;
+}

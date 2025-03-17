@@ -9,7 +9,7 @@ import {
 } from '@/app/components/ui/card';
 import Link from 'next/link';
 import { useState } from 'react';
-import type { ISignUpUser } from '@/app/utils/types';
+import type { ISignUpUser } from '@/app/lib/types';
 import { authClient } from '@/app/lib/auth-client';
 import { redirect } from 'next/navigation';
 import { Button } from '../ui/button';

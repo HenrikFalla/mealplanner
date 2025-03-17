@@ -5,7 +5,7 @@ import { authClient } from '../lib/auth-client';
 import { ModeToggle } from './mode-toggle';
 import Link from 'next/link';
 import ProfileMenu from './profile-menu';
-import { IUser } from '../utils/types';
+import { IUser } from '../lib/types';
 
 export function Header() {
 	const {

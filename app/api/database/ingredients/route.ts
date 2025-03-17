@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export async function getIngredients() {
+export async function GetIngredients() {
 	const response = await prisma.ingredient.findMany({
 		select: {
 			id: true,
@@ -14,7 +14,7 @@ export async function getIngredients() {
 	});
 	return response;
 }
-export async function getIngredientGenres() {
+export async function GetIngredientGenres() {
 	const response = await prisma.ingredientGenre.findMany({
 		select: {
 			id: true,
@@ -23,12 +23,15 @@ export async function getIngredientGenres() {
 	});
 	return response;
 }
-export async function createIngredient(data: {
+export async function CreateIngredient(data: {
 	name: string;
 	ingredientGenreId: number;
 }) {
 	const response = await prisma.ingredient.create({
 		data,
+		include: {
+			IngredientGenre: true,
+		},
 	});
 	return response;
 }

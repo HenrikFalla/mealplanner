@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import type { IIngredient, IIngredientGenre } from '../utils/types';
+import type { IIngredient, IIngredientGenre } from '../lib/types';
 import {
 	Card,
 	CardContent,

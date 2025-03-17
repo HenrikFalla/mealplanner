@@ -1,16 +1,16 @@
 import {
-	getIngredientGenres,
-	getIngredients,
+	GetIngredientGenres,
+	GetIngredients,
 } from '@/app/api/database/ingredients/route';
 import { ManageIngredients } from '@/app/components/manage-ingredients';
 import { auth } from '@/app/lib/auth';
-import { IIngredient, IIngredientGenre } from '@/app/utils/types';
+import { IIngredient, IIngredientGenre } from '@/app/lib/types';
 import { ArrowLeft } from 'lucide-react';
 import { headers } from 'next/headers';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
-export default async function Units() {
+export default async function AdminIngredients() {
 	const response = await auth.api.getSession({
 		headers: await headers(),
 	});
@@ -21,9 +21,9 @@ export default async function Units() {
 		redirect('/');
 	}
 	// const { user } = response;
-	const ingredients = (await getIngredients()) as unknown as IIngredient[];
+	const ingredients = (await GetIngredients()) as unknown as IIngredient[];
 	const ingredientGenres =
-		(await getIngredientGenres()) as unknown as IIngredientGenre[];
+		(await GetIngredientGenres()) as unknown as IIngredientGenre[];
 	console.log(ingredients);
 	console.log(ingredientGenres);
 	return (

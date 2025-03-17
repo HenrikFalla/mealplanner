@@ -1,10 +1,10 @@
 'use server';
-import { IUnit } from '@/app/utils/types';
+import { IUnit } from '@/app/lib/types';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export async function getUnits() {
+export async function GetUnits() {
 	const units = await prisma.units.findMany({
 		select: {
 			id: true,
@@ -13,14 +13,14 @@ export async function getUnits() {
 	});
 	return units;
 }
-export async function createUnits(units: Array<IUnit>) {
+export async function CreateUnits(units: Array<IUnit>) {
 	const data = await prisma.units.createManyAndReturn({
 		data: units,
 		skipDuplicates: true,
 	});
 	return data;
 }
-export async function deleteUnit(unit: IUnit) {
+export async function DeleteUnit(unit: IUnit) {
 	const data = await prisma.units.delete({
 		where: {
 			id: unit.id,
