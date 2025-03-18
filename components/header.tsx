@@ -1,11 +1,11 @@
 'use client';
 
 import { ForkKnife } from 'lucide-react';
-import { authClient } from '../lib/auth-client';
+import { authClient } from '../app/lib/auth-client';
 import { ModeToggle } from './mode-toggle';
 import Link from 'next/link';
 import ProfileMenu from './profile-menu';
-import { IUser } from '../lib/types';
+import { IUser } from '../app/lib/types';
 
 export function Header() {
 	const {

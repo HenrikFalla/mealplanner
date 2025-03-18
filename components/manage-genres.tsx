@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import type { IGenre } from '../lib/types';
-import { getGenres } from '../utils/database/genres/actions';
+import type { IGenre } from '../app/lib/types';
+import { getGenres } from '../app/utils/database/genres/actions';
 import { RefreshCw } from 'lucide-react';
 import {
 	Card,
@@ -11,7 +11,10 @@ import {
 	CardTitle,
 } from './ui/card';
 import { Button } from './ui/button';
-import { ValidateDeleteGenre, ValidateNewGenre } from '../utils/validate-data';
+import {
+	ValidateDeleteGenre,
+	ValidateNewGenre,
+} from '../app/utils/validate-data';
 
 export function ManageGenres() {
 	const [loaded, setLoaded] = useState(false);

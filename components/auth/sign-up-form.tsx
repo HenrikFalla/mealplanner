@@ -6,7 +6,7 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from '@/app/components/ui/card';
+} from '@/components/ui/card';
 import Link from 'next/link';
 import { useState } from 'react';
 import type { ISignUpUser } from '@/app/lib/types';

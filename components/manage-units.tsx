@@ -1,8 +1,11 @@
 'use client';
 import { useState } from 'react';
-import { IUnit } from '../lib/types';
+import { IUnit } from '../app/lib/types';
 import { Button } from './ui/button';
-import { ValidateDeleteUnit, ValidateNewUnits } from '../utils/validate-data';
+import {
+	ValidateDeleteUnit,
+	ValidateNewUnits,
+} from '../app/utils/validate-data';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 
 export function ManageUnits({ data }: { data: Array<IUnit> }) {

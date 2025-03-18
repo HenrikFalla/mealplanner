@@ -1,5 +1,5 @@
 import '@/app/globals.css';
-import { Header } from '@/app/components/header';
+import { Header } from '@/components/header';
 
 export default function PagesLayout({
 	children,

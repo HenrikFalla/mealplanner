@@ -1,5 +1,5 @@
 import { getUnits } from '@/app/utils/database/units/actions';
-import { ManageUnits } from '@/app/components/manage-units';
+import { ManageUnits } from '@/components/manage-units';
 import { auth } from '@/app/lib/auth';
 import type { IUnit } from '@/app/lib/types';
 import { ArrowLeft } from 'lucide-react';

@@ -2,7 +2,7 @@ import {
 	getIngredientGenres,
 	getIngredients,
 } from '@/app/utils/database/ingredients/actions';
-import { ManageIngredients } from '@/app/components/manage-ingredients';
+import { ManageIngredients } from '@/components/manage-ingredients';
 import { auth } from '@/app/lib/auth';
 import { IIngredient, IIngredientGenre } from '@/app/lib/types';
 import { ArrowLeft } from 'lucide-react';

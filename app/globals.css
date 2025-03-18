@@ -23,4 +23,7 @@ main {
 h1 {
 	@apply text-4xl font-bold;
 }
+.bn-editor {
+	@apply bg-background dark:bg-foreground text-foreground dark:text-background;
+}
 

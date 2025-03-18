@@ -1,7 +1,7 @@
 import { headers } from 'next/headers';
 import { auth } from '../../lib/auth';
 import { redirect } from 'next/navigation';
-import { Card, CardHeader, CardTitle } from '../../components/ui/card';
+import { Card, CardHeader, CardTitle } from '../../../components/ui/card';
 import Link from 'next/link';
 import { CarrotIcon, HandPlatterIcon, PencilRulerIcon } from 'lucide-react';
 

@@ -1,4 +1,4 @@
-import { ManageGenres } from '@/app/components/manage-genres';
+import { ManageGenres } from '@/components/manage-genres';
 import { auth } from '@/app/lib/auth';
 import { ArrowLeft } from 'lucide-react';
 import { headers } from 'next/headers';

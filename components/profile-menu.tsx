@@ -1,11 +1,11 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { authClient } from '../lib/auth-client';
+import { authClient } from '../app/lib/auth-client';
 import { Button } from './ui/button';
 import { LogOutIcon, UserCircle2Icon } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import type { IUser } from '../lib/types';
+import type { IUser } from '../app/lib/types';
 import Link from 'next/link';
 
 export default function ProfileMenu({ user }: { user: IUser }) {

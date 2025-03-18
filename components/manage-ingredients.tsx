@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import type { IIngredient, IIngredientGenre } from '../lib/types';
+import type { IIngredient, IIngredientGenre } from '../app/lib/types';
 import {
 	Card,
 	CardContent,
@@ -10,7 +10,7 @@ import {
 	CardTitle,
 } from './ui/card';
 import { Button } from './ui/button';
-import { ValidateNewIngredient } from '../utils/validate-data';
+import { ValidateNewIngredient } from '../app/utils/validate-data';
 import { RefreshCw } from 'lucide-react';
 
 export function ManageIngredients(props: {
