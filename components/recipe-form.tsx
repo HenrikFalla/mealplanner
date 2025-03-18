@@ -12,7 +12,7 @@ import { getGenres } from '@/app/utils/database/genres/actions';
 import { IGenre } from '@/app/lib/types';
 
 export function RecipeForm() {
-	const [genres, setGenres] = useState<IGenre[]>([{}]);
+	const [genres, setGenres] = useState<IGenre[]>([]);
 	const [recipe, setRecipe] = useState({
 		title: '',
 		genre: 0,
