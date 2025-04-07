@@ -123,11 +123,12 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 - **Recipe Editing:** Allow users to edit their own recipes.
 - **Recipe Deletion:** Allow users to delete their own recipes.
 - **Advanced Search:** Implement more advanced search filters for recipes (e.g., by cuisine, dietary restrictions, ingredients).
-- **Meal Plan Sharing:** Allow users to share their meal plans with others.
+- **Meal Plan Sharing:** Allow users to create shared meal plans.
+- **Notifications:** Allow users to set custom reminders at specific times they choose.
 - **Shopping List Enhancements:**
   - Mark items as purchased.
   - Add custom items to the shopping list.
-  - Import shopping lists from other apps.
+  - Export shopping lists to other apps.
 - **Nutritional Information:** Display nutritional information for recipes.
 - **Scaling:** Improve the app's scalability to handle a large number of users and recipes.
 - **Testing:** Add unit and integration tests.
