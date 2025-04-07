@@ -24,6 +24,7 @@ model Profile {
 model Recipe {
   id             Int              @id @default(autoincrement())
   title          String           @unique
+  image          String?
   description    String?
   steps          RecipeStep[]
   slug           String
