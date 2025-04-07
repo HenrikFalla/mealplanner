@@ -127,7 +127,7 @@ export default function SignUpForm() {
 					console.log(ctx);
 				},
 				onSuccess: (ctx) => {
-					redirect(ctx.data.redirectUrl);
+					redirect(ctx.data.callbackURL);
 				},
 				onError: (ctx) => {
 					setIsLoading(false);
