@@ -61,6 +61,19 @@ export default async function Admin() {
 						</CardHeader>
 					</Card>
 				</Link>
+				<Link
+					href='/recipes/new'
+					className='col-span-2 row-span-1 flex flex-col justify-center items-center h-full w-full'
+				>
+					<Card className='h-full w-full'>
+						<CardHeader className='h-full flex flex-col items-center justify-center w-full'>
+							<CardTitle className='flex flex-row items-start gap-4 h-full'>
+								<HandPlatterIcon className='w-12 h-12' />
+								New Recipe
+							</CardTitle>
+						</CardHeader>
+					</Card>
+				</Link>
 			</section>
 		</section>
 	);
