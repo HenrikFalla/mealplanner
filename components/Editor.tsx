@@ -20,7 +20,8 @@ export default function Editor({
 		},
 	});
 	const handleChange = async ({ data }: { data: Block[] }) => {
-		const newData = JSON.stringify(data);
+		// const newData = JSON.stringify(data); // Json format
+		const newData = await editor.blocksToMarkdownLossy(data); // Markdown format
 		onChange(newData);
 	};
 	// Renders the editor instance using a React component.
