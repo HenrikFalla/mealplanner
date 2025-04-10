@@ -128,7 +128,7 @@ export function RecipeForm() {
 	};
 	return (
 		<section className='grid grid-cols-12 gap-4'>
-			<section className='col-span-8'>
+			<section className='col-span-12'>
 				<Card>
 					<CardHeader>
 						<CardTitle>{'New Recipe'}</CardTitle>
@@ -241,6 +241,17 @@ export function RecipeForm() {
 									}
 								})}
 							</div>
+						</div>
+						<div className='flex flex-col gap-2'>
+							{state.ingredients.map((ingredient, key) => {
+								return (
+									<div key={key}>
+										<p>{ingredient.name}</p>
+										<input defaultValue={ingredient.unit} />
+										<input defaultValue={ingredient.amount} />
+									</div>
+								);
+							})}
 						</div>
 					</CardContent>
 				</Card>
