@@ -1,0 +1,13 @@
+import { Canvas, Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as IngredientsStories from './ingredients.stories';
+
+<Meta of={IngredientsStories} />
+
+# Ingredients list
+
+This is the ingredients list. This component takes an array of objects with ingredient name, measurement and qty. In addition it also takes in the portions and the minimal amount of portions you can make with this recipe.
+
+The qty for each ingredient is adjusted if the user changes the portions qty.
+
+<Canvas of={IngredientsStories.Default} />
+<Controls />

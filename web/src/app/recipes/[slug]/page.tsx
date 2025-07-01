@@ -12,6 +12,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
+import RecipeIntro from '@/components/recipe/recipe-intro';
 
 const RECIPE_QUERY = `*[_type == "recipe" && slug.current == $slug][0]{
   ...,
@@ -48,17 +49,21 @@ export default async function Recipe({
 	console.log('postImageUrl', postImageUrl); // Remove this
 	return (
 		<main>
-			{postImageUrl && (
-				<Image
-					src={postImageUrl}
-					alt={post.title}
-					width={500}
-					height={500}
-					priority
+			{postImageUrl ?
+				<RecipeIntro
+					props={{
+						imageUrl: postImageUrl,
+						title: post.title,
+						description: post.description,
+					}}
 				/>
-			)}
-			<h1 className='text-4xl font-bold mb-8'>{post.title}</h1>
-			<p>{post.description}</p>
+			:	<RecipeIntro
+					props={{
+						title: post.title,
+						description: post.description,
+					}}
+				/>
+			}
 			{post.ingredients?.length > 0 && ( // Move to separate component
 				<Card>
 					<CardHeader>

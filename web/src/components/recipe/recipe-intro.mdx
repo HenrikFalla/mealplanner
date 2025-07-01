@@ -1,0 +1,22 @@
+import { Canvas, Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as RecipeIntroStories from './recipe-intro.stories';
+
+<Meta of={RecipeIntroStories} />
+
+# Recipe intro
+
+This is the introductory section for the recipe. This is guaranteed above the fold and shows the user the title of the recipe, a short description and an image if available.
+
+## With image
+
+Version of the intro with an image. This version requires an image url, title and description.
+
+<Canvas of={RecipeIntroStories.Default} />
+
+<Controls />
+
+## Without image
+
+Version of the intro without an image. This version only requires a title and a description.
+
+<Canvas of={RecipeIntroStories.NoImage} />
