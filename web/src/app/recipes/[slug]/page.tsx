@@ -45,6 +45,7 @@ export default async function Recipe({
 	console.log('Recipe', post); // Remove this
 	const postImageUrl =
 		post.image ? urlFor(post.image)?.width(550).height(310).url() : null;
+	console.log('postImageUrl', postImageUrl); // Remove this
 	return (
 		<main>
 			{postImageUrl && (
