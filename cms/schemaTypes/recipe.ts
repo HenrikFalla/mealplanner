@@ -45,6 +45,16 @@ export default defineType({
       of: [{type: 'block'}],
     }),
     defineField({
+      name: 'portions',
+      title: 'Portions',
+      type: 'number',
+    }),
+    defineField({
+      name: 'minPortions',
+      title: 'Minimum Portions',
+      type: 'number',
+    }),
+    defineField({
       name: 'ingredients',
       title: 'Ingredients',
       type: 'array',
