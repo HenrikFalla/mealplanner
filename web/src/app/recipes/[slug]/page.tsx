@@ -3,6 +3,15 @@ import imageUrlBuilder from '@sanity/image-url';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { client } from '@/sanity/client';
 import Image from 'next/image';
+import {
+	Card,
+	CardAction,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from '@/components/ui/card';
 
 const RECIPE_QUERY = `*[_type == "recipe" && slug.current == $slug][0]{
   ...,
@@ -49,19 +58,26 @@ export default async function Recipe({
 			)}
 			<h1 className='text-4xl font-bold mb-8'>{post.title}</h1>
 			<p>{post.description}</p>
-			{post.ingredients?.length > 0 && (
-				<div className='mt-8'>
-					<h2 className='text-2xl font-bold mb-4'>Ingredienser</h2>
-					<ul className='list-disc list-inside'>
-						{post.ingredients.map((item: Ingredient, key: number) => (
-							<li key={key}>
-								{item.quantity}
-								{item.measurement && ` ${item.measurement.name}`}
-								{item.ingredient && ` ${item.ingredient.name}`}
-							</li>
-						))}
-					</ul>
-				</div>
+			{post.ingredients?.length > 0 && ( // Move to separate component
+				<Card>
+					<CardHeader>
+						<CardTitle>Ingredienser</CardTitle>
+					</CardHeader>
+					<CardAction>
+						<p>Add Button to change portions here</p>
+					</CardAction>
+					<CardContent>
+						<ul className='list-disc list-inside'>
+							{post.ingredients.map((item: Ingredient, key: number) => (
+								<li key={key}>
+									{item.quantity}
+									{item.measurement && ` ${item.measurement.name}`}
+									{item.ingredient && ` ${item.ingredient.name}`}
+								</li>
+							))}
+						</ul>
+					</CardContent>
+				</Card>
 			)}
 		</main>
 	);
