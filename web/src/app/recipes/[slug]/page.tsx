@@ -3,7 +3,6 @@ import imageUrlBuilder from '@sanity/image-url';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { client } from '@/sanity/client';
 import Image from 'next/image';
-import { Separator } from 'radix-ui';
 
 const RECIPE_QUERY = `*[_type == "recipe" && slug.current == $slug][0]{
   ...,
@@ -53,7 +52,6 @@ export default async function Recipe({
 			{post.ingredients?.length > 0 && (
 				<div className='mt-8'>
 					<h2 className='text-2xl font-bold mb-4'>Ingredienser</h2>
-					<Separator.Root />
 					<ul className='list-disc list-inside'>
 						{post.ingredients.map((item: Ingredient, key: number) => (
 							<li key={key}>
