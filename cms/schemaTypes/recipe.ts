@@ -45,7 +45,7 @@ export default defineType({
       of: [{type: 'block'}],
     }),
     defineField({
-      name: 'Ingredients',
+      name: 'ingredients',
       title: 'Ingredients',
       type: 'array',
       of: [{type: 'ingredientInRecipe'}],
