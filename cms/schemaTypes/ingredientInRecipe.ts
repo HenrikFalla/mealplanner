@@ -23,4 +23,16 @@ export default defineType({
       type: 'number',
     }),
   ],
+  preview: {
+    select: {
+      title: 'ingredient.name',
+      measurement: 'measurement.name',
+      quantity: 'quantity',
+    },
+    prepare({title, measurement, quantity}) {
+      return {
+        title: `${quantity} ${measurement} ${title}`,
+      }
+    },
+  },
 })
