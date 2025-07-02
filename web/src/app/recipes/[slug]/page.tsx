@@ -4,6 +4,7 @@ import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { client } from '@/sanity/client';
 import RecipeIntro from '@/components/recipe/recipe-intro';
 import Ingredients from '@/components/recipe/ingredients';
+import RecipeSteps from '@/components/recipe/recipe-steps';
 
 const RECIPE_QUERY = `*[_type == "recipe" && slug.current == $slug][0]{
   ...,
@@ -36,8 +37,8 @@ export default async function Recipe({
 		post.image ? urlFor(post.image)?.width(550).height(310).url() : null;
 	console.log('postImageUrl', postImageUrl); // Remove this
 	return (
-		<main>
-			<section>
+		<main className='grid grid-cols-12 gap-4 relative'>
+			<section className='col-span-12'>
 				{postImageUrl ?
 					<RecipeIntro
 						props={{
@@ -54,13 +55,18 @@ export default async function Recipe({
 					/>
 				}
 			</section>
-			<aside className='px-4'>
-				<Ingredients
-					ingredients={post.ingredients}
-					defaultportions={post.portions}
-					minPortions={post.minPortions}
-				/>
-			</aside>
+			<div className='grid grid-cols-12 gap-4 col-span-12 max-w-6xl mx-auto'>
+				<aside className='px-4 col-span-12 md:col-span-4 relative md:sticky top-0 h-fit'>
+					<Ingredients
+						ingredients={post.ingredients}
+						defaultportions={post.portions}
+						minPortions={post.minPortions}
+					/>
+				</aside>
+				<section className='px-4 col-span-12 md:col-span-8'>
+					<RecipeSteps instructions={post.instructions} />
+				</section>
+			</div>
 		</main>
 	);
 }

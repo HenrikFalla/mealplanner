@@ -111,6 +111,12 @@
 	--sidebar-border: oklch(1 0 0 / 10%);
 	--sidebar-ring: oklch(0.552 0.016 285.938);
 }
+h1 {
+	@apply text-5xl font-bold tracking-wide;
+}
+h2 {
+	@apply text-3xl font-bold tracking-wide;
+}
 
 @layer base {
 	* {

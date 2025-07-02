@@ -20,7 +20,7 @@ export default function RecipeIntro({
 					/>
 				</div>
 			)}
-			<div className='mx-4 md:mx-auto md:max-w-4xl flex flex-col gap-4 pt-4'>
+			<div className='mx-4 md:mx-auto md:max-w-6xl flex flex-col gap-4 pt-4 md:px-4'>
 				<h1 className='text-5xl font-bold'>{title}</h1>
 				<p>{description}</p>
 			</div>

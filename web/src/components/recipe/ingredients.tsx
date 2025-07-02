@@ -26,7 +26,7 @@ export default function Ingredients({
 	return (
 		<Card>
 			<CardHeader>
-				<CardTitle>Ingredienser</CardTitle>
+				<CardTitle className='font-bold text-2xl'>Ingredienser</CardTitle>
 				<label className='pt-4'>
 					Antall porsjoner
 					<div className='flex gap-2 items-center pt-2'>
