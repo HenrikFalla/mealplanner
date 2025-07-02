@@ -2,16 +2,6 @@ import { type SanityDocument } from 'next-sanity';
 import imageUrlBuilder from '@sanity/image-url';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { client } from '@/sanity/client';
-import Image from 'next/image';
-import {
-	Card,
-	CardAction,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-} from '@/components/ui/card';
 import RecipeIntro from '@/components/recipe/recipe-intro';
 import Ingredients from '@/components/recipe/ingredients';
 

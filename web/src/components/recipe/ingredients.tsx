@@ -1,12 +1,6 @@
 'use client';
 import { useState } from 'react';
-import {
-	Card,
-	CardAction,
-	CardContent,
-	CardHeader,
-	CardTitle,
-} from '../ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { Separator } from '../ui/separator';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
