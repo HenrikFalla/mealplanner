@@ -1,0 +1,10 @@
+import { Canvas, Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as RecipeStepsStories from './recipe-steps.stories';
+
+<Meta of={RecipeStepsStories} />
+
+# Recipe steps
+
+This is the display of the steps for the recipe. This takes an array with text block data from sanity and renders out each step as paragraphs.
+
+<Canvas of={RecipeStepsStories.Default} />
