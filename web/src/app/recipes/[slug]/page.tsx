@@ -19,11 +19,6 @@ const urlFor = (source: SanityImageSource) =>
 		imageUrlBuilder({ projectId, dataset }).image(source)
 	:	null;
 const options = { next: { revalidate: 30 } };
-interface Ingredient {
-	ingredient: { name: string };
-	measurement: { name: string };
-	quantity: number;
-}
 export default async function Recipe({
 	params,
 }: {
