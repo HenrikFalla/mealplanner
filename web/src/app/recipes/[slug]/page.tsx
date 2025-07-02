@@ -13,6 +13,7 @@ import {
 	CardTitle,
 } from '@/components/ui/card';
 import RecipeIntro from '@/components/recipe/recipe-intro';
+import Ingredients from '@/components/recipe/ingredients';
 
 const RECIPE_QUERY = `*[_type == "recipe" && slug.current == $slug][0]{
   ...,
@@ -44,47 +45,37 @@ export default async function Recipe({
 		options,
 	);
 	console.log('Recipe', post); // Remove this
+	const ingredients = [...post.ingredients];
+	console.log('Ingredients: ', ingredients); // Remove this
 	const postImageUrl =
 		post.image ? urlFor(post.image)?.width(550).height(310).url() : null;
 	console.log('postImageUrl', postImageUrl); // Remove this
 	return (
 		<main>
-			{postImageUrl ?
-				<RecipeIntro
-					props={{
-						imageUrl: postImageUrl,
-						title: post.title,
-						description: post.description,
-					}}
+			<section>
+				{postImageUrl ?
+					<RecipeIntro
+						props={{
+							imageUrl: postImageUrl,
+							title: post.title,
+							description: post.description,
+						}}
+					/>
+				:	<RecipeIntro
+						props={{
+							title: post.title,
+							description: post.description,
+						}}
+					/>
+				}
+			</section>
+			<aside className='px-4'>
+				<Ingredients
+					ingredients={post.ingredients}
+					defaultportions={post.portions}
+					minPortions={post.minPortions}
 				/>
-			:	<RecipeIntro
-					props={{
-						title: post.title,
-						description: post.description,
-					}}
-				/>
-			}
-			{post.ingredients?.length > 0 && ( // Move to separate component
-				<Card>
-					<CardHeader>
-						<CardTitle>Ingredienser</CardTitle>
-					</CardHeader>
-					<CardAction>
-						<p>Add Button to change portions here</p>
-					</CardAction>
-					<CardContent>
-						<ul className='list-disc list-inside'>
-							{post.ingredients.map((item: Ingredient, key: number) => (
-								<li key={key}>
-									{item.quantity}
-									{item.measurement && ` ${item.measurement.name}`}
-									{item.ingredient && ` ${item.ingredient.name}`}
-								</li>
-							))}
-						</ul>
-					</CardContent>
-				</Card>
-			)}
+			</aside>
 		</main>
 	);
 }

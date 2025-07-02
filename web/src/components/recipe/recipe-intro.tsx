@@ -1,5 +1,4 @@
 'use client';
-import { AspectRatio } from '@radix-ui/react-aspect-ratio';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -12,10 +11,7 @@ export default function RecipeIntro({
 	return (
 		<section className='flex items-center justify-center flex-col pb-4'>
 			{imageUrl && (
-				<AspectRatio
-					ratio={16 / 6}
-					className='overflow-hidden'
-				>
+				<div className='w-full h-fit max-h-80 overflow-hidden'>
 					<Image
 						src={imageUrl}
 						alt={title}
@@ -24,7 +20,7 @@ export default function RecipeIntro({
 						priority
 						className='object-cover w-auto h-auto min-h-full min-w-full '
 					/>
-				</AspectRatio>
+				</div>
 			)}
 			<div className='mx-4 md:mx-auto md:max-w-4xl flex flex-col gap-4 pt-4'>
 				<h1 className='text-5xl font-bold'>{title}</h1>

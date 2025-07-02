@@ -14,19 +14,23 @@ export const Default: Story = {
 	args: {
 		ingredients: [
 			{
-				name: 'Egg, rått',
+				ingredient: {
+					name: 'Egg',
+				},
 				quantity: 2,
-				measurement: 'stykk',
+				measurement: {
+					name: 'stykk',
+				},
 			},
 			{
-				name: 'Mel',
+				ingredient: { name: 'Mel' },
 				quantity: 150,
-				measurement: 'gram',
+				measurement: { name: 'gram' },
 			},
 			{
-				name: 'Melk',
+				ingredient: { name: 'Melk' },
 				quantity: 90,
-				measurement: 'gram',
+				measurement: { name: 'gram' },
 			},
 		],
 	},

@@ -17,9 +17,13 @@ export default function Ingredients({
 	minPortions = 1,
 }: {
 	ingredients: {
-		name: string;
+		ingredient: {
+			name: string;
+		};
+		measurement: {
+			name: string;
+		};
 		quantity: number;
-		measurement: string;
 	}[];
 	defaultportions?: number;
 	minPortions?: number;
@@ -60,8 +64,9 @@ export default function Ingredients({
 				<ul className='list-disc list-inside'>
 					{ingredients.map((item, key) => (
 						<li key={key}>
-							{item.quantity * portions} {item.measurement}{' '}
-							{item.name.toLowerCase()}
+							{item.quantity && (item.quantity / defaultportions) * portions}{' '}
+							{item.measurement.name && item.measurement.name}{' '}
+							{item.ingredient.name && item.ingredient.name.toLowerCase()}
 						</li>
 					))}
 				</ul>
